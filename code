@@ -1,0 +1,10 @@
+# Data analysis and visualization
+
+This module performs statistical analysis and generates figures for the study of European freshwater fish biodiversity under river warming.
+
+## Main tasks
+- Data preprocessing
+- Trend estimation using linear mixed-effects models (LMMs)
+- Phase-specific analysis (early vs late period)
+- Functional diversity and LCBD analysis
+- Figure generation (main figures and supplementary figures)
