@@ -1,0 +1,60 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: form
+   Data: df
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+REML criterion at convergence: -3668.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-7.6778 -0.2248  0.0047  0.1505  8.5833 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   (Intercept) 0.000e+00 0.00000 
+ HYBAS_ID (Intercept) 8.556e-05 0.00925 
+ Protocol (Intercept) 1.680e-04 0.01296 
+ Residual             2.260e-02 0.15033 
+Number of obs: 4003, groups:  SiteID, 2784; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+                             Estimate Std. Error         df t value Pr(>|t|)
+(Intercept)                 2.165e-02  8.733e-03  3.939e+00   2.480 0.069221
+Period_bin                 -3.742e-02  5.817e-03  1.767e+03  -6.433 1.61e-10
+mean_temp_z                 1.830e-02  6.226e-03  2.435e+01   2.940 0.007091
+sen_temp_z                 -1.780e-02  1.016e-02  4.642e+02  -1.753 0.080342
+mean_Q_z                    8.963e-03  3.311e-03  1.949e+03   2.707 0.006852
+mean_organic_z              5.960e-03  4.323e-03  3.263e+03   1.379 0.168049
+mean_salinity_z            -4.268e-03  4.418e-03  3.986e+03  -0.966 0.334086
+HFP_period_z                6.877e-03  4.750e-03  3.102e+03   1.448 0.147747
+elevation_z                 5.738e-03  4.042e-03  3.872e+02   1.420 0.156522
+Period_bin:mean_temp_z     -1.795e-02  6.815e-03  2.890e+03  -2.634 0.008488
+Period_bin:sen_temp_z       1.679e-02  1.077e-02  6.672e+02   1.559 0.119353
+Period_bin:mean_Q_z        -2.446e-02  4.860e-03  3.945e+03  -5.034 5.03e-07
+Period_bin:mean_organic_z  -2.017e-02  6.116e-03  3.786e+03  -3.298 0.000983
+Period_bin:mean_salinity_z  8.727e-03  5.580e-03  3.984e+03   1.564 0.117903
+Period_bin:HFP_period_z    -1.425e-02  6.110e-03  3.946e+03  -2.333 0.019724
+Period_bin:elevation_z     -8.887e-03  5.196e-03  3.862e+03  -1.710 0.087303
+                              
+(Intercept)                .  
+Period_bin                 ***
+mean_temp_z                ** 
+sen_temp_z                 .  
+mean_Q_z                   ** 
+mean_organic_z                
+mean_salinity_z               
+HFP_period_z                  
+elevation_z                   
+Period_bin:mean_temp_z     ** 
+Period_bin:sen_temp_z         
+Period_bin:mean_Q_z        ***
+Period_bin:mean_organic_z  ***
+Period_bin:mean_salinity_z    
+Period_bin:HFP_period_z    *  
+Period_bin:elevation_z     .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
