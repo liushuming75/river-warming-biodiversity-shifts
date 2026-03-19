@@ -1,0 +1,4 @@
+grp,var1,var2,vcov,sdcor,Zone
+HYBAS_ID,(Intercept),NA,0,0,Warm
+Protocol,(Intercept),NA,1.95672575756126e-5,0.004423489298688604,Warm
+Residual,NA,NA,0.004957334490329185,0.07040834105650541,Warm

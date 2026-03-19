@@ -1,0 +1,44 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: form
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+REML criterion at convergence: -1565.1
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-8.0823 -0.4291  0.0263  0.4245  3.9019 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ HYBAS_ID (Intercept) 0.000e+00 0.000000
+ Protocol (Intercept) 1.957e-05 0.004423
+ Residual             4.957e-03 0.070408
+Number of obs: 662, groups:  HYBAS_ID, 9; Protocol, 4
+
+Fixed effects:
+                  Estimate Std. Error         df t value Pr(>|t|)  
+(Intercept)      2.082e-02  1.011e-02  6.999e+01   2.058   0.0433 *
+mean_temp_z     -2.100e-02  9.284e-03  4.786e+02  -2.262   0.0242 *
+slope_temp_z    -3.865e-03  2.327e-03  3.649e+02  -1.661   0.0976 .
+mean_flow_z      4.726e-03  3.067e-03  6.538e+02   1.541   0.1238  
+mean_organic_z  -8.196e-03  4.658e-03  5.444e+02  -1.759   0.0791 .
+mean_salinity_z -2.948e-03  2.331e-03  4.744e+02  -1.265   0.2066  
+HFP_mean_z       1.712e-04  3.308e-03  2.640e+02   0.052   0.9588  
+elevation_z      4.672e-03  3.765e-03  6.537e+02   1.241   0.2151  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) mn_tm_ slp_t_ mn_fl_ mn_rg_ mn_sl_ HFP_m_
+mean_temp_z -0.919                                          
+slope_tmp_z  0.085 -0.175                                   
+mean_flow_z  0.403 -0.442  0.059                            
+mean_rgnc_z -0.106  0.086 -0.002 -0.085                     
+men_slnty_z -0.168  0.152 -0.021  0.011 -0.200              
+HFP_mean_z  -0.061  0.024  0.031 -0.152  0.268 -0.161       
+elevation_z -0.211  0.231 -0.078 -0.077  0.219  0.091  0.332
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
