@@ -1,0 +1,43 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: form
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+REML criterion at convergence: -706.1
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-7.7627 -0.1519 -0.0284  0.1749  6.4230 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   (Intercept) 0.0007892 0.02809 
+ HYBAS_ID (Intercept) 0.0071264 0.08442 
+ Protocol (Intercept) 0.0000000 0.00000 
+ Residual             0.0266587 0.16327 
+Number of obs: 1073, groups:  SiteID, 664; HYBAS_ID, 17; Protocol, 3
+
+Fixed effects:
+                             Estimate Std. Error         df t value Pr(>|t|)   
+(Intercept)                -5.899e-01  2.610e-01  9.914e+02  -2.261  0.02400 * 
+Period_bin                  5.804e-01  3.116e-01  9.156e+02   1.863  0.06283 . 
+mean_temp_z                 4.886e-03  3.312e-02  3.366e+02   0.148  0.88280   
+sen_temp_z                  1.999e-02  2.454e-02  9.631e+02   0.815  0.41551   
+mean_Q_z                   -1.821e-02  9.322e-03  1.053e+03  -1.953  0.05108 . 
+mean_organic_z             -1.001e+00  3.539e-01  9.692e+02  -2.828  0.00478 **
+mean_salinity_z             4.308e-01  2.086e-01  1.042e+03   2.065  0.03914 * 
+HFP_period_z               -1.128e-03  1.103e-02  1.057e+03  -0.102  0.91851   
+elevation_z                 5.383e-03  8.958e-03  3.841e+02   0.601  0.54824   
+Period_bin:mean_temp_z      6.887e-03  2.825e-02  6.788e+02   0.244  0.80747   
+Period_bin:sen_temp_z      -8.241e-03  2.737e-02  9.953e+02  -0.301  0.76340   
+Period_bin:mean_Q_z         7.911e-03  1.234e-02  6.135e+02   0.641  0.52155   
+Period_bin:mean_organic_z   8.719e-01  4.207e-01  8.713e+02   2.072  0.03852 * 
+Period_bin:mean_salinity_z -2.430e-01  2.545e-01  7.751e+02  -0.955  0.33997   
+Period_bin:HFP_period_z    -1.655e-03  1.525e-02  7.047e+02  -0.109  0.91359   
+Period_bin:elevation_z     -9.186e-03  1.046e-02  6.126e+02  -0.878  0.38028   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+

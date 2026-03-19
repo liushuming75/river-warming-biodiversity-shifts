@@ -1,0 +1,5 @@
+grp,var1,var2,vcov,sdcor,Zone
+SiteID,(Intercept),NA,0,0,Intermediate
+HYBAS_ID,(Intercept),NA,1.1363013362095524e-4,0.010659743600150767,Intermediate
+Protocol,(Intercept),NA,0,0,Intermediate
+Residual,NA,NA,0.055068842741303484,0.23466751530900795,Intermediate

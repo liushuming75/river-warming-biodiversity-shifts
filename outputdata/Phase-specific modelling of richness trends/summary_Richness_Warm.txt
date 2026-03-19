@@ -1,0 +1,40 @@
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: form
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+REML criterion at convergence: 103
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-10.8387  -0.3332   0.0110   0.2051   9.7073 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   (Intercept) 0.0015817 0.03977 
+ HYBAS_ID (Intercept) 0.0001603 0.01266 
+ Protocol (Intercept) 0.0014682 0.03832 
+ Residual             0.0573037 0.23938 
+Number of obs: 1063, groups:  SiteID, 728; HYBAS_ID, 9; Protocol, 3
+
+Fixed effects:
+                             Estimate Std. Error         df t value Pr(>|t|)   
+(Intercept)                 -0.080119   0.057586  51.474361  -1.391  0.17012   
+Period_bin                   0.043083   0.069697 836.120781   0.618  0.53665   
+mean_temp_z                  0.140425   0.047677 522.382974   2.945  0.00337 **
+sen_temp_z                   0.037803   0.023335 350.261757   1.620  0.10613   
+mean_Q_z                    -0.030770   0.012863 792.499427  -2.392  0.01698 * 
+mean_organic_z               0.050089   0.020685 849.740639   2.422  0.01566 * 
+mean_salinity_z             -0.020735   0.010304 983.968565  -2.012  0.04446 * 
+HFP_period_z                -0.023386   0.015384 775.481185  -1.520  0.12888   
+elevation_z                  0.014759   0.014855 269.472624   0.993  0.32136   
+Period_bin:mean_temp_z      -0.123528   0.058750 847.150760  -2.103  0.03579 * 
+Period_bin:sen_temp_z       -0.033916   0.025166 451.159273  -1.348  0.17842   
+Period_bin:mean_Q_z          0.034999   0.016497 796.517789   2.122  0.03418 * 
+Period_bin:mean_organic_z   -0.069820   0.025708 816.491568  -2.716  0.00675 **
+Period_bin:mean_salinity_z   0.035120   0.012358 720.651329   2.842  0.00461 **
+Period_bin:HFP_period_z      0.006316   0.018327 814.770154   0.345  0.73048   
+Period_bin:elevation_z      -0.016737   0.018506 737.287172  -0.904  0.36609   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
