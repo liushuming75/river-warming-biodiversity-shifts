@@ -11,9 +11,9 @@ This repository contains code for analyzing long-term changes in European freshw
 
 ## Data
 
-Due to data size limitations, only sample data are provided in this repository. 
+Due to data size limitations, only the data required to run the code are provided in this repository.
 
-The full datasets supporting the findings of this study are available from the corresponding authors upon reasonable request. For further information, please contact:
+The full datasets supporting the findings of this study are available from the corresponding authors upon reasonable request.
 
 - Hao Shi (haoshi@rcees.ac.cn)
 - Zhibin Liu (zbliu@rcees.ac.cn)
