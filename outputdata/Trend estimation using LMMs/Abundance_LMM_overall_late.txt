@@ -1,0 +1,51 @@
+========================================
+Model: Abundance_LMM_overall_late 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: abundance_std ~ year_c + (1 + year_c || SiteID) + (1 | Species) +  
+    (1 | Protocol) + (1 | HYBAS_ID)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ 701032.2  701110.6 -350508.1  701016.2    133612 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-6.3718 -0.6396 -0.0580  0.6409  5.4143 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   year_c       0.006686 0.08177 
+ SiteID.1 (Intercept)  0.140214 0.37445 
+ Species  (Intercept)  0.039960 0.19990 
+ HYBAS_ID (Intercept)  0.126186 0.35523 
+ Protocol (Intercept)  0.008157 0.09032 
+ Residual             10.833907 3.29149 
+Number of obs: 133620, groups:  
+SiteID, 4882; Species, 72; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)  2.241e-01  9.993e-02  1.814e+01   2.243   0.0376 *  
+year_c      -2.485e-02  2.875e-03  7.835e+03  -8.643   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+       (Intr)
+year_c -0.122
+optimizer (bobyqa) convergence code: 0 (OK)
+Model is nearly unidentifiable: very large eigenvalue
+ - Rescale variables?
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 701032.2 
+BIC: 701110.6 
+R2_marginal: 0.0008429963 
+R2_conditional: 0.05816901 

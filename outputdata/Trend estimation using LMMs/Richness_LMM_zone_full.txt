@@ -1,0 +1,58 @@
+========================================
+Model: Richness_LMM_zone_full 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: species_richness ~ year_c * zone + (1 + year_c || SiteID) + (1 |  
+    HYBAS_ID) + (1 | Protocol)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ 151671.7  151767.0  -75824.8  151649.7     43023 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-11.4237  -0.4525   0.0518   0.4618   8.7310 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ SiteID   (Intercept) 5.747335 2.39736 
+ SiteID.1 year_c      0.003064 0.05535 
+ HYBAS_ID (Intercept) 1.458205 1.20756 
+ Protocol (Intercept) 5.376292 2.31868 
+ Residual             1.375712 1.17291 
+Number of obs: 43034, groups:  SiteID, 3417; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+                          Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)              4.434e+00  1.127e+00  6.355e+00   3.935  0.00684 ** 
+year_c                  -4.738e-03  2.936e-03  2.627e+03  -1.614  0.10672    
+zoneIntermediate         5.849e-01  2.479e-01  1.893e+03   2.359  0.01840 *  
+zoneWarm                 2.217e+00  2.987e-01  2.275e+03   7.421 1.64e-13 ***
+year_c:zoneIntermediate  1.448e-02  3.426e-03  2.767e+03   4.225 2.47e-05 ***
+year_c:zoneWarm          6.735e-03  4.308e-03  3.071e+03   1.563  0.11809    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) year_c znIntr zonWrm yr_c:I
+year_c      -0.002                            
+zoneIntrmdt -0.180  0.010                     
+zoneWarm    -0.194  0.008  0.820              
+yr_c:znIntr  0.002 -0.857 -0.007 -0.004       
+yer_c:znWrm  0.002 -0.681 -0.007 -0.017  0.584
+optimizer (bobyqa) convergence code: 0 (OK)
+Model failed to converge with max|grad| = 0.00213117 (tol = 0.002, component 1)
+Model is nearly unidentifiable: very large eigenvalue
+ - Rescale variables?
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 151671.7 
+BIC: 151767 
+R2_marginal: 0.04217153 
+R2_conditional: 0.9070019 

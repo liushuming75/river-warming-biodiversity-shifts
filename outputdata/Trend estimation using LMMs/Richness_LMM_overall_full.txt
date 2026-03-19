@@ -1,0 +1,49 @@
+========================================
+Model: Richness_LMM_overall_full 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: species_richness ~ year_c + (1 + year_c || SiteID) + (1 | HYBAS_ID) +  
+    (1 | Protocol)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ 151776.4  151837.0  -75881.2  151762.4     43027 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-11.4216  -0.4532   0.0515   0.4620   8.7350 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ SiteID   (Intercept) 5.933946 2.4360  
+ SiteID.1 year_c      0.003113 0.0558  
+ HYBAS_ID (Intercept) 0.906499 0.9521  
+ Protocol (Intercept) 6.340540 2.5180  
+ Residual             1.375341 1.1727  
+Number of obs: 43034, groups:  SiteID, 3417; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+             Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept) 5.876e+00  1.174e+00 5.619e+00   5.006 0.002943 ** 
+year_c      5.243e-03  1.371e-03 3.147e+03   3.824 0.000134 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+       (Intr)
+year_c 0.000 
+optimizer (bobyqa) convergence code: 0 (OK)
+Model is nearly unidentifiable: very large eigenvalue
+ - Rescale variables?
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 151776.4 
+BIC: 151837 
+R2_marginal: 0.0001284703 
+R2_conditional: 0.9069027 

@@ -1,0 +1,59 @@
+========================================
+Model: Abundance_LMM_zone_late 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: abundance_std ~ year_c * zone + (1 + year_c || SiteID) + (1 |  
+    Species) + (1 | Protocol) + (1 | HYBAS_ID)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ 700954.9  701072.5 -350465.4  700930.9    133608 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-6.3811 -0.6402 -0.0581  0.6411  5.4090 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   year_c       0.006449 0.08030 
+ SiteID.1 (Intercept)  0.138175 0.37172 
+ Species  (Intercept)  0.040430 0.20107 
+ HYBAS_ID (Intercept)  0.127697 0.35735 
+ Protocol (Intercept)  0.009234 0.09609 
+ Residual             10.831987 3.29120 
+Number of obs: 133620, groups:  
+SiteID, 4882; Species, 72; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+                          Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)              2.361e-02  1.228e-01  2.298e+01   0.192   0.8493    
+year_c                   3.208e-02  7.040e-03  1.341e+04   4.557 5.23e-06 ***
+zoneIntermediate         1.822e-01  9.701e-02  7.641e+02   1.878   0.0608 .  
+zoneWarm                 1.818e-01  1.061e-01  5.914e+02   1.713   0.0872 .  
+year_c:zoneIntermediate -7.159e-02  8.067e-03  1.249e+04  -8.874  < 2e-16 ***
+year_c:zoneWarm         -6.224e-02  8.706e-03  8.883e+03  -7.150 9.40e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) year_c znIntr zonWrm yr_c:I
+year_c      -0.306                            
+zoneIntrmdt -0.528  0.391                     
+zoneWarm    -0.538  0.356  0.850              
+yr_c:znIntr  0.278 -0.872 -0.440 -0.328       
+yer_c:znWrm  0.248 -0.809 -0.317 -0.397  0.706
+optimizer (bobyqa) convergence code: 0 (OK)
+Model is nearly unidentifiable: very large eigenvalue
+ - Rescale variables?
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 700954.9 
+BIC: 701072.5 
+R2_marginal: 0.002339022 
+R2_conditional: 0.05867113 

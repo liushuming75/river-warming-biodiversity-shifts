@@ -1,0 +1,53 @@
+========================================
+Model: Richness_LMM_zone_early 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: species_richness ~ year_c * zone + (1 + year_c || SiteID) + (1 |  
+    HYBAS_ID) + (1 | Protocol)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  72214.3   72301.0  -36096.1   72192.3     19627 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-9.9449 -0.4394  0.0074  0.4501  5.8271 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ SiteID   (Intercept) 5.602453 2.36695 
+ SiteID.1 year_c      0.005842 0.07643 
+ HYBAS_ID (Intercept) 1.104159 1.05079 
+ Protocol (Intercept) 7.689613 2.77302 
+ Residual             1.345300 1.15987 
+Number of obs: 19638, groups:  SiteID, 3017; HYBAS_ID, 25; Protocol, 5
+
+Fixed effects:
+                         Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)             4.862e+00  1.314e+00 5.946e+00   3.700  0.01026 *  
+year_c                  2.634e-02  5.860e-03 1.736e+03   4.496 7.39e-06 ***
+zoneIntermediate        6.061e-01  2.745e-01 1.847e+03   2.208  0.02735 *  
+zoneWarm                2.561e+00  3.344e-01 2.096e+03   7.658 2.85e-14 ***
+year_c:zoneIntermediate 6.601e-03  6.758e-03 1.801e+03   0.977  0.32877    
+year_c:zoneWarm         2.825e-02  8.664e-03 2.059e+03   3.261  0.00113 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) year_c znIntr zonWrm yr_c:I
+year_c       0.022                            
+zoneIntrmdt -0.170 -0.107                     
+zoneWarm    -0.183 -0.087  0.806              
+yr_c:znIntr -0.019 -0.867  0.121  0.076       
+yer_c:znWrm -0.015 -0.676  0.072  0.111  0.587
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 72214.28 
+BIC: 72301.01 
+R2_marginal: 0.04557362 
+R2_conditional: 0.9209287 

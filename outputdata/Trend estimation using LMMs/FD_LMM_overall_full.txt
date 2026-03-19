@@ -1,0 +1,49 @@
+========================================
+Model: FD_LMM_overall_full 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: SES_FDis ~ year_c + (1 + year_c || SiteID) + (1 | HYBAS_ID) +  
+    (1 | Protocol)
+   Data: df_fd
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  77067.6   77125.6  -38526.8   77053.6     29137 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.8023 -0.7299 -0.0896  0.7243  3.1712 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   (Intercept) 0.2451506 0.49513 
+ SiteID.1 year_c      0.0007012 0.02648 
+ HYBAS_ID (Intercept) 0.0177153 0.13310 
+ Protocol (Intercept) 0.0026520 0.05150 
+ Residual             0.6888081 0.82994 
+Number of obs: 29144, groups:  SiteID, 2834; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept) -8.907e-02  4.493e-02  7.227e+00  -1.982   0.0866 .  
+year_c      -7.575e-03  9.076e-04  2.019e+03  -8.346   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+       (Intr)
+year_c -0.013
+optimizer (bobyqa) convergence code: 0 (OK)
+Model is nearly unidentifiable: very large eigenvalue
+ - Rescale variables?
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 77067.64 
+BIC: 77125.6 
+R2_marginal: 0.003810238 
+R2_conditional: 0.3145871 

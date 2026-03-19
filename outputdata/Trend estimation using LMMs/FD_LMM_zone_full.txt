@@ -1,0 +1,57 @@
+========================================
+Model: FD_LMM_zone_full 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: SES_FDis ~ year_c * zone + (1 + year_c || SiteID) + (1 | HYBAS_ID) +  
+    (1 | Protocol)
+   Data: df_fd
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  77051.0   77142.1  -38514.5   77029.0     29133 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.8614 -0.7298 -0.0873  0.7264  3.2000 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   (Intercept) 0.2446474 0.49462 
+ SiteID.1 year_c      0.0006867 0.02620 
+ HYBAS_ID (Intercept) 0.0118844 0.10902 
+ Protocol (Intercept) 0.0031739 0.05634 
+ Residual             0.6888653 0.82998 
+Number of obs: 29144, groups:  SiteID, 2834; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+                          Estimate Std. Error         df t value Pr(>|t|)   
+(Intercept)             -2.213e-02  6.484e-02  1.125e+01  -0.341  0.73918   
+year_c                  -2.163e-03  2.534e-03  2.068e+03  -0.853  0.39348   
+zoneIntermediate        -1.299e-01  6.253e-02  6.143e+01  -2.077  0.04197 * 
+zoneWarm                -6.213e-02  6.948e-02  4.693e+01  -0.894  0.37578   
+year_c:zoneIntermediate -8.312e-03  2.772e-03  2.053e+03  -2.998  0.00275 **
+year_c:zoneWarm         -4.446e-04  3.162e-03  2.072e+03  -0.141  0.88818   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) year_c znIntr zonWrm yr_c:I
+year_c      -0.040                            
+zoneIntrmdt -0.711  0.040                     
+zoneWarm    -0.725  0.036  0.828              
+yr_c:znIntr  0.036 -0.914 -0.037 -0.031       
+yer_c:znWrm  0.035 -0.801 -0.029 -0.049  0.733
+optimizer (bobyqa) convergence code: 0 (OK)
+Model is nearly unidentifiable: very large eigenvalue
+ - Rescale variables?
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 77050.97 
+BIC: 77142.05 
+R2_marginal: 0.006724553 
+R2_conditional: 0.3119113 

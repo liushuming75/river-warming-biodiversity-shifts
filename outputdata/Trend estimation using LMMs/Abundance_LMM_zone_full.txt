@@ -1,0 +1,58 @@
+========================================
+Model: Abundance_LMM_zone_full 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: abundance_std ~ year_c * zone + (1 + year_c || SiteID) + (1 |  
+    Species) + (1 | Protocol) + (1 | HYBAS_ID)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+1304363.7 1304488.6 -652169.8 1304339.7    244680 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-6.1016 -0.6355 -0.0600  0.6349  5.7001 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   year_c       0.005356 0.07319 
+ SiteID.1 (Intercept)  0.000000 0.00000 
+ Species  (Intercept)  0.000000 0.00000 
+ HYBAS_ID (Intercept)  0.015112 0.12293 
+ Protocol (Intercept)  0.000000 0.00000 
+ Residual             11.920238 3.45257 
+Number of obs: 244692, groups:  
+SiteID, 5240; Species, 72; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+                          Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)              2.666e-02  4.251e-02  6.053e+01   0.627    0.533    
+year_c                   5.572e-02  3.715e-03  5.541e+03  14.999   <2e-16 ***
+zoneIntermediate         5.998e-03  4.683e-02  1.443e+02   0.128    0.898    
+zoneWarm                 1.096e-03  4.983e-02  1.197e+02   0.022    0.982    
+year_c:zoneIntermediate -7.627e-02  4.246e-03  5.528e+03 -17.961   <2e-16 ***
+year_c:zoneWarm         -5.673e-02  4.927e-03  4.527e+03 -11.515   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) year_c znIntr zonWrm yr_c:I
+year_c      -0.059                            
+zoneIntrmdt -0.676  0.054                     
+zoneWarm    -0.681  0.050  0.847              
+yr_c:znIntr  0.046 -0.875 -0.048 -0.037       
+yer_c:znWrm  0.045 -0.754 -0.041 -0.063  0.660
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 1304364 
+BIC: 1304489 
+R2_marginal: 0.003591698 
+R2_conditional: 0.03226906 

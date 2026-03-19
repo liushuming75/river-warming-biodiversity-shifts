@@ -1,0 +1,45 @@
+========================================
+Model: LCBD_LMM_overall_full 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: LCBD ~ year_c + (1 + year_c || SiteID) + (1 | HYBAS_ID) + (1 |  
+    Protocol)
+   Data: df_lcbd
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+-624255.3 -624194.6  312134.7 -624269.3     42996 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-12.6480  -0.2553  -0.0506   0.1810  31.2858 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev. 
+ SiteID   (Intercept) 1.292e-08 1.137e-04
+ SiteID.1 year_c      2.841e-10 1.686e-05
+ HYBAS_ID (Intercept) 1.551e-09 3.938e-05
+ Protocol (Intercept) 8.121e-09 9.012e-05
+ Residual             2.097e-08 1.448e-04
+Number of obs: 43003, groups:  SiteID, 3416; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)  2.349e-04  4.320e-05  5.891e+00   5.437   0.0017 ** 
+year_c      -1.047e-05  3.173e-07  3.461e+03 -33.002   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+       (Intr)
+year_c -0.001
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: -624255.3 
+BIC: -624194.6 
+R2_marginal: 0.1069398 
+R2_conditional: 0.7035042 

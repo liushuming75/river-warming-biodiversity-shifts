@@ -1,0 +1,53 @@
+========================================
+Model: Richness_LMM_zone_late 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: species_richness ~ year_c * zone + (1 + year_c || SiteID) + (1 |  
+    HYBAS_ID) + (1 | Protocol)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  83125.8   83214.5  -41551.9   83103.8     23385 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-10.6225  -0.4366   0.0304   0.4411  10.7238 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ SiteID   (Intercept) 5.929464 2.43505 
+ SiteID.1 year_c      0.004975 0.07053 
+ HYBAS_ID (Intercept) 1.601156 1.26537 
+ Protocol (Intercept) 5.478690 2.34066 
+ Residual             1.208675 1.09940 
+Number of obs: 23396, groups:  SiteID, 3263; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+                          Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)              4.498e+00  1.146e+00  6.461e+00   3.924   0.0067 ** 
+year_c                  -1.055e-02  5.005e-03  2.171e+03  -2.107   0.0352 *  
+zoneIntermediate         6.218e-01  2.615e-01  1.930e+03   2.377   0.0175 *  
+zoneWarm                 2.268e+00  3.142e-01  2.279e+03   7.220 7.06e-13 ***
+year_c:zoneIntermediate -1.592e-03  5.998e-03  2.398e+03  -0.265   0.7907    
+year_c:zoneWarm         -7.528e-03  7.134e-03  2.534e+03  -1.055   0.2914    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+            (Intr) year_c znIntr zonWrm yr_c:I
+year_c      -0.020                            
+zoneIntrmdt -0.186  0.086                     
+zoneWarm    -0.200  0.071  0.819              
+yr_c:znIntr  0.017 -0.834 -0.103 -0.061       
+yer_c:znWrm  0.014 -0.702 -0.060 -0.097  0.585
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 83125.82 
+BIC: 83214.48 
+R2_marginal: 0.04200002 
+R2_conditional: 0.9201142 

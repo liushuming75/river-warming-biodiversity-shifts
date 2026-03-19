@@ -1,0 +1,45 @@
+========================================
+Model: Richness_LMM_overall_late 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: species_richness ~ year_c + (1 + year_c || SiteID) + (1 | HYBAS_ID) +  
+    (1 | Protocol)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  83205.3   83261.7  -41595.6   83191.3     23389 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-10.6183  -0.4369   0.0308   0.4411  10.7534 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ SiteID   (Intercept) 6.120349 2.47393 
+ SiteID.1 year_c      0.005051 0.07107 
+ HYBAS_ID (Intercept) 0.953004 0.97622 
+ Protocol (Intercept) 6.441248 2.53796 
+ Residual             1.207871 1.09903 
+Number of obs: 23396, groups:  SiteID, 3263; HYBAS_ID, 26; Protocol, 5
+
+Fixed effects:
+              Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)  5.986e+00  1.188e+00  5.658e+00   5.040  0.00279 ** 
+year_c      -1.310e-02  2.431e-03  2.787e+03  -5.388 7.71e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+       (Intr)
+year_c -0.008
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 83205.26 
+BIC: 83261.68 
+R2_marginal: 0.0001815903 
+R2_conditional: 0.9195076 

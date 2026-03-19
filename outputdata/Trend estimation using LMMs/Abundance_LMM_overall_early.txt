@@ -1,0 +1,50 @@
+========================================
+Model: Abundance_LMM_overall_early 
+========================================
+
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's
+  method [lmerModLmerTest]
+Formula: abundance_std ~ year_c + (1 + year_c || SiteID) + (1 | Species) +  
+    (1 | Protocol) + (1 | HYBAS_ID)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ 601925.0  602002.0 -300954.5  601909.0    111064 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.5405 -0.6350 -0.0623  0.6312  5.3620 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ SiteID   year_c       0.006267 0.07917 
+ SiteID.1 (Intercept)  0.186564 0.43193 
+ Species  (Intercept)  0.184239 0.42923 
+ HYBAS_ID (Intercept)  0.042285 0.20563 
+ Protocol (Intercept)  0.000000 0.00000 
+ Residual             12.854618 3.58533 
+Number of obs: 111072, groups:  
+SiteID, 4488; Species, 65; HYBAS_ID, 25; Protocol, 5
+
+Fixed effects:
+             Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept) 1.037e-01  8.459e-02 6.439e+01   1.226    0.225    
+year_c      1.467e-02  3.029e-03 4.390e+03   4.844 1.32e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+       (Intr)
+year_c 0.160 
+optimizer (bobyqa) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+
+----------------------------------------
+Model fit statistics
+----------------------------------------
+AIC: 601925 
+BIC: 602002 
+R2_marginal: 0.0003932804 
+R2_conditional: 0.06550712 
